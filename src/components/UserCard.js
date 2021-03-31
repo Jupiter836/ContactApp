@@ -73,7 +73,7 @@ export const UserCard = ({
 
 const styles = StyleSheet.create({
   nameStyle: {
-    fontSize: 31,
+    fontSize: 21,
     fontWeight: '700',
     color: '#00ADD3',
   },
