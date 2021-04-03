@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
-  extends: '@react-native-community',
-};
+  extends: '@react-native-community'
+}
 module.exports = {
   root: true,
   parser: 'babel-eslint',
@@ -50,13 +50,13 @@ module.exports = {
     'no-console': 'error',
     'arrow-parens': 0,
     'eol-last': 0,
-    'react/destructuring-assignment': 0,
     'react-native/no-unused-styles': 0,
     'react-native/split-platform-components': 0,
     'react-native/no-inline-styles': 0,
     'react-native/no-color-literals': 0,
     'react-native/no-raw-text': 0,
-    'consistent-return': 0
+    'consistent-return': 0,
+    'no-use-before-define': ['error', { variables: false }]
   },
   settings: {
     'import/resolver': {

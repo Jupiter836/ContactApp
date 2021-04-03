@@ -1,16 +1,16 @@
-import React from 'react';
-import {StyleSheet, View, Text, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
 const screenStrings = ['Screen 1', 'Screen 2']
 
-export const TapBar = ({setActiveScreen}) => (
-    <View style={styles.root}>
-        {screenStrings.map((item, index) => (
-            <TouchableOpacity style = {styles.buttonStyle} onPress= {() => setActiveScreen(index + 1)}>
-                    <Text style = {styles.headerText}>{item.toUpperCase()}</Text>
-                </TouchableOpacity>
+export const TapBar = ({ setActiveScreen }) => (
+  <View style={styles.root}>
+    {screenStrings.map((item, index) => (
+      <TouchableOpacity style={styles.buttonStyle} onPress={() => setActiveScreen(index + 1)}>
+        <Text style={styles.headerText}>{item.toUpperCase()}</Text>
+      </TouchableOpacity>
         ))}
-    </View>
+  </View>
 )
 
 const styles = StyleSheet.create({
@@ -25,15 +25,15 @@ const styles = StyleSheet.create({
         bottom: 40,
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'row',
+        flexDirection: 'row'
     },
     headerText: {
         fontSize:15,
         fontWeight: '700',
         color: '#FFFFFF',
-        textAlign: 'center',
+        textAlign: 'center'
     },
     buttonStyle: {
-        flex: 1,
+        flex: 1
     }
 })

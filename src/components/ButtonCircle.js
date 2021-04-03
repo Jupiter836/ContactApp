@@ -1,11 +1,11 @@
 import React from 'react'
-import {StyleSheet, TouchableOpacity, Image} from 'react-native'
+import { StyleSheet, TouchableOpacity, Image } from 'react-native'
 import arrowIcon from '../assets/images/arrow.png'
 
-export const ButtonCircle = ({onPress}) => (
-    <TouchableOpacity style = {styles.buttonCircle} onPress={() => onPress (1)}>
-        <Image style={styles.iconStyle} source={arrowIcon} />
-    </TouchableOpacity>
+export const ButtonCircle = ({ onPress }) => (
+  <TouchableOpacity style={styles.buttonCircle} onPress={() => onPress (1)}>
+    <Image style={styles.iconStyle} source={arrowIcon} />
+  </TouchableOpacity>
 )
 const styles = StyleSheet.create ({
     buttonCircle: {
@@ -15,10 +15,10 @@ const styles = StyleSheet.create ({
         borderRadius: 20,
         marginRight: 15,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     iconStyle: {
         height: 20,
-        width: 15,
+        width: 15
     }
 })
