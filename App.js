@@ -1,36 +1,39 @@
 import React, { useState } from 'react'
-import { ScrollView, StyleSheet, View } from 'react-native'
-import { UserCard } from './src/components/UserCard'
+import { StyleSheet, View } from 'react-native'
 import { Header } from './src/components/Header'
 import { TapBar } from './src/components/TapBar'
 import { Screen2 } from './src/screens/Screen2'
-import { DATA } from './src/DATA'
+import { Screen1 } from './src/screens/Screen1'
+import { Screen3 } from './src/screens/Screen3'
 
-const screenTitles = ['Contacts', 'Log In']
+const screenTitles = ['Contacts', 'Log In', 'Gallery']
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
-  return (
+  
+  if (activeScreen === 1) {
+    return(
+      <View style={styles.root}>
+        <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
+        <Screen1 />
+        <TapBar setActiveScreen={setActiveScreen} />
+      </View>)}
+  if (activeScreen === 2) {
+    return(
+      <View style={styles.root}>
+        <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
+        <Screen2 />
+        <TapBar setActiveScreen={setActiveScreen} />
+      </View>)}
+
+if (activeScreen === 3) {
+  return(
     <View style={styles.root}>
       <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
-      {activeScreen === 1 ? (
-        <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
-          {DATA.map((item) => (
-            <UserCard
-              userName={item.userName}
-              userPhone={item.userPhone}
-              userPic={item.userPic}
-              userAddress={item.addressDescription}
-              userMail={item.emailDescription}
-            />
-          ))}
-        </ScrollView>
-      ) : (
-        <Screen2 />
-      )}
+      <Screen3 />
       <TapBar setActiveScreen={setActiveScreen} />
-    </View>
-  )
+    </View>)} 
+
 }
 
 const styles = StyleSheet.create({

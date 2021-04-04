@@ -1,24 +1,24 @@
-import React, {useState} from 'react'
-import {ScrollView, StyleSheet, TextInput} from 'react-native'
+import React, { useState } from 'react'
+import { ScrollView, StyleSheet, TextInput } from 'react-native'
 
 export const Screen2 = () => {
     const [valueLogin, setValueLogin] = useState ('')
     const [valuePassword, setValuePassword] = useState ('')
     return (
-        <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
-            <TextInput 
-            style={styles.inputStyle}
-            placeholder = "Enter your Login"
-            value={valueLogin}
-            onChangeText={setValueLogin}
-            />
-            <TextInput 
-            style={styles.inputStyle}
-            placeholder = "Enter your Password"
-            value={valuePassword}
-            onChangeText={setValuePassword}
-            />
-        </ScrollView>
+      <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
+        <TextInput 
+          style={styles.inputStyle}
+          placeholder="Enter your Login"
+          value={valueLogin}
+          onChangeText={setValueLogin}
+        />
+        <TextInput 
+          style={styles.inputStyle}
+          placeholder="Enter your Password"
+          value={valuePassword}
+          onChangeText={setValuePassword}
+        />
+      </ScrollView>
     )
 }
 
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     scrollContainer: {
 paddingTop:250,
 alignItems: 'center',
-justifyContent: 'center',
+justifyContent: 'center'
     },
     inputStyle: {
         width: '100%',
@@ -39,6 +39,6 @@ justifyContent: 'center',
         borderColor: '#E5E5E5',
         paddingLeft: 30,
         borderRadius: 20,
-        fontSize: 18,
+        fontSize: 18
     }
 })

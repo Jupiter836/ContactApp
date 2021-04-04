@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 import {
   StyleSheet,
   View,
@@ -7,17 +7,17 @@ import {
   TouchableOpacity,
   LayoutAnimation,
   UIManager,
-  Platform,
-} from 'react-native';
+  Platform
+} from 'react-native'
 
 if (
   Platform.OS === 'android' &&
   UIManager.setLayoutAnimationEnabledExperimental
 ) {
-  UIManager.setLayoutAnimationEnabledExperimental(true);
+  UIManager.setLayoutAnimationEnabledExperimental(true)
 }
 
-const AddresBlock = ({title, description}) => {
+const AddresBlock = ({ title, description }) => {
   return (
     <>
       <View style={styles.addresBox}>
@@ -28,28 +28,29 @@ const AddresBlock = ({title, description}) => {
         </View>
       </View>
     </>
-  );
-};
+  )
+}
 
 export const UserCard = ({
   userName,
   userPhone,
   userPic,
   userAddress,
-  userMail,
+  userMail
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const handlePress = () => {
-    setIsOpen(!isOpen);
-    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring);
-  };
+    setIsOpen(!isOpen)
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.spring)
+  }
 
   return (
     <>
       <TouchableOpacity
-        style={[styles.cardStyle, {height: isOpen ? 190 : 100}]}
-        onPress={handlePress}>
+        style={[styles.cardStyle, { height: isOpen ? 190 : 100 }]}
+        onPress={handlePress}
+      >
         <View style={styles.mainBox}>
           <View style={styles.styleIco}>
             <Image style={styles.iconStyle} source={userPic} />
@@ -67,73 +68,73 @@ export const UserCard = ({
         )}
       </TouchableOpacity>
     </>
-  );
-};
+  )
+}
 
 
 const styles = StyleSheet.create({
   nameStyle: {
     fontSize: 21,
     fontWeight: '700',
-    color: '#00ADD3',
+    color: '#00ADD3'
   },
   cardStyle: {
     width: 363,
     backgroundColor: '#E5E5E5',
     borderRadius: 10,
-    marginBottom: 20,
+    marginBottom: 20
   },
   styleIco: {
     flex: 3,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   mainBox: {
     flexDirection: 'row',
-    paddingTop: 20,
+    paddingTop: 20
   },
   phoneStyle: {
     fontSize: 15,
     fontWeight: '400',
-    color: '#00ADD3',
+    color: '#00ADD3'
   },
   titleBox: {
     flex: 6,
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   infoTitle: {
     fontSize: 12,
     fontWeight: '800',
-    color: '#00ADD3',
+    color: '#00ADD3'
   },
   infoContent: {
     fontSize: 12,
     fontWeight: '400',
-    color: '#0A0A0A',
+    color: '#0A0A0A'
   },
   addresBox: {
     paddingTop: 10,
-    flexDirection: 'row',
+    flexDirection: 'row'
   },
   iconStyle: {
     width: 60,
     height: 60,
     borderWidth: 5,
     borderColor: '#00ADD3',
-    borderRadius: 30,
+    borderRadius: 30
   },
   infoBox: {
-    flex: 6,
+    flex: 6
   },
   spacer: {
-    flex: 3,
+    flex: 3
   },
   scrollStyle: {
-    flex: 1,
+    flex: 1
   },
   scrollContainer: {
     paddingTop: 100,
     alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: 'center'
+  }
+})

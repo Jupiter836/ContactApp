@@ -1,4 +1,4 @@
-import userpic from './assets/images/userpic.png';
+import userpic from './assets/images/userpic.png'
 
 export const DATA = [
   {
@@ -6,42 +6,41 @@ export const DATA = [
     emailDescription: 'graham@yahoo.com',
     userName: 'Laenne Graham',
     userPhone: 'Phone: 010-692-6593 * 09125',
-    userPic: userpic,
+    userPic: userpic
   },
   {
     addressDescription: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
     emailDescription: 'graham@yahoo.com',
     userName: 'Laenne Graham',
     userPhone: 'Phone: 010-692-6593 * 09125',
-    userPic: userpic,
+    userPic: userpic
   },
   {
     addressDescription: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
     emailDescription: 'graham@yahoo.com',
     userName: 'Laenne Graham',
     userPhone: 'Phone: 010-692-6593 * 09125',
-    userPic: userpic,
+    userPic: userpic
   },
   {
     addressDescription: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
     emailDescription: 'graham@yahoo.com',
     userName: 'Laenne Graham',
     userPhone: 'Phone: 010-692-6593 * 09125',
-    userPic: userpic,
+    userPic: userpic
   },
   {
     addressDescription: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
     emailDescription: 'graham@yahoo.com',
     userName: 'Laenne Graham',
     userPhone: 'Phone: 010-692-6593 * 09125',
-    userPic: userpic,
+    userPic: userpic
   },
-  ,
   {
     addressDescription: '53198-4257, South Elvis, Hoeger Mall, Apt. 692',
     emailDescription: 'graham@yahoo.com',
     userName: 'Laenne Graham',
     userPhone: 'Phone: 010-692-6593 * 09125',
-    userPic: userpic,
-  },
-];
+    userPic: userpic
+  }
+]
