@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
-const screenStrings = ['Screen 1', 'Screen 2']
+const screenStrings = ['Screen 1', 'Screen 2', 'Screen 3']
 
 export const TapBar = ({ setActiveScreen }) => (
   <View style={styles.root}>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     headerText: {
-        fontSize:15,
+        fontSize:13,
         fontWeight: '700',
         color: '#FFFFFF',
         textAlign: 'center'
