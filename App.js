@@ -6,16 +6,16 @@ import { TapBar } from './src/components/TapBar'
 import { Screen2 } from './src/screens/Screen2'
 import { DATA } from './src/DATA'
 
-
 const screenTitles = ['Contacts', 'Log In']
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
   return (
     <View style={styles.root}>
-      <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} /> {activeScreen === 1 ? (
+      <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
+      {activeScreen === 1 ? (
         <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
-          {DATA.map(item => ( 
+          {DATA.map((item) => (
             <UserCard
               userName={item.userName}
               userPhone={item.userPhone}
@@ -23,7 +23,7 @@ const App = () => {
               userAddress={item.addressDescription}
               userMail={item.emailDescription}
             />
-      ))}
+          ))}
         </ScrollView>
       ) : (
         <Screen2 />
@@ -35,7 +35,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   scrollStyle: {
-    flex: 1 
+    flex: 1
   },
   scrollContainer: {
     paddingTop: 20,
@@ -56,7 +56,6 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     fontSize: 18
   }
-
 })
 
 export default App
