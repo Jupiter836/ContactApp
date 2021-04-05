@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, View } from 'react-native'
 import { Header } from './src/components/Header'
 import { TapBar } from './src/components/TapBar'
@@ -13,14 +13,14 @@ const App = () => {
   
   if (activeScreen === 1) {
     return(
-      <View style={styles.root}>
-        <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
+      <View style={[styles.root, { backgroundColor: '#FFFFFF' }]}>
+        <Header titlesArray={screenTitles} activeScreen={activeScreen[styles.headerText, { color: '#FFFFFF' }]} setActiveScreen={setActiveScreen }  />
         <Screen1 />
         <TapBar setActiveScreen={setActiveScreen} />
       </View>)}
   if (activeScreen === 2) {
     return(
-      <View style={styles.root}>
+      <View style={[styles.root, { backgroundColor: '#FFFFFF' }]}>
         <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
         <Screen2 />
         <TapBar setActiveScreen={setActiveScreen} />
@@ -28,12 +28,11 @@ const App = () => {
 
 if (activeScreen === 3) {
   return(
-    <View style={styles.root}>
+    <View style={[styles.root, { backgroundColor:  '#0A0A0A' }]}>
       <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
       <Screen3 />
       <TapBar setActiveScreen={setActiveScreen} />
     </View>)} 
-
 }
 
 const styles = StyleSheet.create({

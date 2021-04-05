@@ -34,7 +34,8 @@ export const Screen3 = () => {
 
 const styles = StyleSheet.create({
     scrollStyle: {
-        
+      width: 350
+      
         
         
     },
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
     paddingTop:37,
     alignItems: 'center',
     justifyContent: 'center'
-    
+
     },
     cardStyle: {
         width: 363,
@@ -52,6 +53,7 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         borderColor: '#444444',
         marginBottom: 20
+      
     },
    iconStyle: {
        width: 339,
