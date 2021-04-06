@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { ScrollView, StyleSheet, TextInput } from 'react-native'
+import { StyleSheet, TextInput, View, TouchableOpacity, Text } from 'react-native'
 
-export const Screen2 = () => {
+export const Screen2 = ({ setActiveScreen }) => {
     const [valueLogin, setValueLogin] = useState ('')
     const [valuePassword, setValuePassword] = useState ('')
     return (
-      <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
+      <View style={styles.root}>
         <TextInput 
           style={styles.inputStyle}
           placeholder="Enter your Login"
@@ -18,16 +18,16 @@ export const Screen2 = () => {
           value={valuePassword}
           onChangeText={setValuePassword}
         />
-      </ScrollView>
+        <TouchableOpacity style={styles.buttonStyle} onPress={() => setActiveScreen(3)}>
+          <Text style={styles.submitText}> Submit </Text>
+        </TouchableOpacity>
+      </View>
     )
 }
 
 const styles = StyleSheet.create({
-    scrollStyle: {
-        flex: 1
-    },
-    scrollContainer: {
-paddingTop:250,
+    root: {
+paddingTop:150,
 alignItems: 'center',
 justifyContent: 'center'
     },
@@ -40,5 +40,19 @@ justifyContent: 'center'
         paddingLeft: 30,
         borderRadius: 20,
         fontSize: 18
-    }
+    },
+  buttonStyle: {
+    marginTop: 200,
+    borderRadius: 20,
+    width: 265,
+    height: 51,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#00ADD3'
+},
+submitText: {
+    fontSize: 16,
+    color: '#FFFFFF'
+}
 })

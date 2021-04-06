@@ -34,11 +34,9 @@ export const Screen3 = () => {
 
 const styles = StyleSheet.create({
     scrollStyle: {
-      width: 350
-      
-        
-        
+    flex: 1
     },
+    
     scrollContainer: {
     paddingTop:37,
     alignItems: 'center',

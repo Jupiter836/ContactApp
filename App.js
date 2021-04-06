@@ -10,29 +10,16 @@ const screenTitles = ['Contacts', 'Log In', 'Gallery']
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
-  
-  if (activeScreen === 1) {
-    return(
-      <View style={[styles.root, { backgroundColor: '#FFFFFF' }]}>
-        <Header titlesArray={screenTitles} activeScreen={activeScreen[styles.headerText, { color: '#FFFFFF' }]} setActiveScreen={setActiveScreen }  />
-        <Screen1 />
-        <TapBar setActiveScreen={setActiveScreen} />
-      </View>)}
-  if (activeScreen === 2) {
-    return(
-      <View style={[styles.root, { backgroundColor: '#FFFFFF' }]}>
-        <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
-        <Screen2 />
-        <TapBar setActiveScreen={setActiveScreen} />
-      </View>)}
 
-if (activeScreen === 3) {
-  return(
-    <View style={[styles.root, { backgroundColor:  '#0A0A0A' }]}>
+  return (
+    <View style={[styles.root, { backgroundColor: activeScreen === 3 ? 'black' : 'white' }]}>
       <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
-      <Screen3 />
-      <TapBar setActiveScreen={setActiveScreen} />
-    </View>)} 
+      {activeScreen === 1 && <Screen1 />}
+      {activeScreen === 2 && <Screen2 setActiveScreen={setActiveScreen} />}
+      {activeScreen === 3 && <Screen3 />}
+      {activeScreen === 1? (<TapBar setActiveScreen={setActiveScreen} />) : null}
+    </View>
+  )
 }
 
 const styles = StyleSheet.create({
