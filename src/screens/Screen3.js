@@ -1,35 +1,21 @@
 import React from 'react'
-import { ScrollView, StyleSheet, Image, Text, View } from 'react-native'
-import Waterfall from '../assets/images/Waterfall.png'
+import { ScrollView, StyleSheet } from 'react-native'
+import { GalleryCard } from '../components/GalleryCard'
 
-const GalleryBlock = () => {
-    return (
-      <>
-        <View style={styles.root}>
-          <View style={styles.cardStyle}>
-            <Image style={styles.iconStyle} source={Waterfall} />
-            <Text style={styles.galleryStyle}>Official photo for album</Text>
-          </View>
-        </View>
-      </>
-  )
-}
-
-export const Screen3 = () => {
-    return (
-      <>
-        <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
-          <GalleryBlock />
-          <GalleryBlock />
-          <GalleryBlock />
-          <GalleryBlock />
-          <GalleryBlock />
-          <GalleryBlock />
-          <GalleryBlock />
-          <GalleryBlock />
-        </ScrollView>
-      </>
-    )
+export const Screen3 = ({ data }) => {
+  // console.log(data)
+   return (
+     <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
+       {data.map((item) => (
+         <GalleryCard
+           galleryName={item.username}
+           galleryNumber={item.phone}
+           galleyPhot={item.userPic}
+           userAddress={item.address.zipcode}
+         />
+       ))}
+     </ScrollView>
+   )
 }
 
 const styles = StyleSheet.create({

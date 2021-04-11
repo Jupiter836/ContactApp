@@ -8,8 +8,8 @@ import { Screen3 } from './src/screens/Screen3'
 
 
 const screenTitles = ['Contacts', 'Log In', 'Gallery']
-const urlUser = 'https://jsonplaceholder.typicode.com/users'
-const urlGallery ='https://jsonplaceholder.typicode.com/photos?_limit=30'
+const url = 'https://jsonplaceholder.typicode.com/users'
+/* const urlGallery ='https://jsonplaceholder.typicode.com/photos?_limit=30' */
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
@@ -20,23 +20,23 @@ const App = () => {
 
   console.log(':::', data)
 
-  useEffect (() =>{
-     asyncHandlerUser ()
+  useEffect(() => {
+     asyncHandler ()
   }, [refresh])
 
-const asyncHandlerUser = async () => {
+const asyncHandler = async () => {
   try {
-    const response = await fetch(urlUser)
+    const response = await fetch(url)
     const users = await response.json()
     setData(users)
     setLoading(false)
   } catch (error) {
     setLoading(false)
-    alertHandlerUser(error)
+    alertHandler(error)
   }
 }
 
-  const alertHandlerUser = (error) =>
+  const alertHandler = (error) =>
     Alert.alert(
       `${error}`,
       'Repeat the request?',
@@ -52,7 +52,7 @@ const asyncHandlerUser = async () => {
     )
 
 
-    useEffect (() =>{
+   /*  useEffect (() =>{
       asyncHandlerGallery ()
    }, [refresh])
  
@@ -82,7 +82,7 @@ const asyncHandlerUser = async () => {
          { text: 'OK', onPress: () => setRefresh(!refresh) }
        ],
        { cancelable: false }
-     )
+     ) */
 
   if (isLoading) {
     return <ActivityIndicator style={styles.indicatorStyle} size="large" color="black" />
