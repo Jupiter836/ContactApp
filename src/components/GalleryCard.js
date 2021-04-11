@@ -1,13 +1,11 @@
 import React from 'react'
 import { StyleSheet, View, Text, Image } from 'react-native'
-import Waterfall from '../assets/images/Waterfall.png'
 
 const GalleryBlock = ({ title }) => {
   return (
     <>
       <View style={styles.root}>
         <View style={styles.cardStyle}>
-          <Image style={styles.iconStyle} source={Waterfall} />
           <Text style={styles.galleryStyle}>{title}</Text>
         </View>
       </View>
@@ -23,13 +21,12 @@ export const GalleryCard = ({
       <>
         <View style={styles.mainBox}>
           <View style={styles.styleIco}>
-            <Image style={styles.iconStyle} source={Waterfall} />
+            <Image style={styles.iconStyle} source={galleryPhoto} />
           </View>
         </View>
         <View style={styles.hiddenBox}>
-          <GalleryBlock title="NAME" description={galleryName} />
-          <GalleryBlock title="NUMBER" description={galleryNumber} />
-          <GalleryBlock title="PHOTO" description={galleryPhoto} />
+          <GalleryBlock title={galleryName} />
+          <GalleryBlock title={galleryNumber} />
         </View>
       </>
       )

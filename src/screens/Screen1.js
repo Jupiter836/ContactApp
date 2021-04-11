@@ -3,16 +3,16 @@ import { ScrollView, StyleSheet } from 'react-native'
 import { UserCard } from '../components/UserCard'
 //import { DATA } from '../DATA'
 
-export const Screen1 = ({ data }) => {
-   // console.log(data)
+export const Screen1 = ({ dataUser }) => {
+    /* console.log(dataUser) */
     return (
       <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
-        {data.map((item) => (
+        {dataUser.map((item) => (
           <UserCard
             userName={item.username}
             userPhone={item.phone}
             userPic={item.userPic}
-            userAddress={item.address.zipcode}
+            userAddress={item?.address?.zipcode}
             userMail={item.email}
           />
         ))}

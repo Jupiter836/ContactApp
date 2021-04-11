@@ -8,17 +8,19 @@ import { Screen3 } from './src/screens/Screen3'
 
 
 const screenTitles = ['Contacts', 'Log In', 'Gallery']
-const url = 'https://jsonplaceholder.typicode.com/users'
+const urlUser = 'https://jsonplaceholder.typicode.com/users'
 const urlGallery ='https://jsonplaceholder.typicode.com/photos?_limit=30'
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
 
   const [isLoading, setLoading] = useState (true)
-  const [data, setData] = useState ([])
+  const [dataUser, setDataUser] = useState ([])
+  const [dataGallery, setDataGallery] = useState ([])
   const [refresh, setRefresh] = useState(false)
 
-  console.log(':::', data)
+  console.log(':::', dataUser)
+  console.log(':::', dataGallery)
 
   useEffect(() => {
      asyncHandler ()
@@ -26,9 +28,9 @@ const App = () => {
 
 const asyncHandler = async () => {
   try {
-    const response = await fetch(url)
+    const response = await fetch(urlUser)
     const users = await response.json()
-    setData(users)
+    setDataUser(users)
     setLoading(false)
   } catch (error) {
     setLoading(false)
@@ -60,7 +62,7 @@ const asyncHandler = async () => {
    try {
      const response = await fetch(urlGallery)
      const gallery = await response.json()
-     setData(gallery)
+     setDataGallery(gallery)
      setLoading(false)
    } catch (error) {
      setLoading(false)
@@ -91,9 +93,9 @@ const asyncHandler = async () => {
   return (
     <View style={[styles.root, { backgroundColor: activeScreen === 3 ? 'black' : 'white' }]}>
       <Header titlesArray={screenTitles} activeScreen={activeScreen} setActiveScreen={setActiveScreen} />
-      {activeScreen === 1 && <Screen1 data={data} />}
+      {activeScreen === 1 && <Screen1 data={dataUser} />}
       {activeScreen === 2 && <Screen2 setActiveScreen={setActiveScreen} />}
-      {activeScreen === 3 && <Screen3 />}
+      {activeScreen === 3 && <Screen3 data={dataGallery} />}
       {activeScreen === 1? (<TapBar setActiveScreen={setActiveScreen} />) : null}
     </View>
   )

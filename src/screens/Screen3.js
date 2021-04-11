@@ -1,17 +1,20 @@
 import React from 'react'
 import { ScrollView, StyleSheet } from 'react-native'
 import { GalleryCard } from '../components/GalleryCard'
+//import { DATA } from '../DATA'
 
-export const Screen3 = ({ data }) => {
-  // console.log(data)
+export const Screen3 = ({ dataGallery }) => {
+
+   console.log(dataGallery) 
+
    return (
      <>
        <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
-         {data.map((item) => (
+         {dataGallery.map((item) => (
            <GalleryCard
              galleryName={item.title}
              galleryNumber={item.albumId}
-             galleyPhoto={{ uri:item.url }}
+             galleryPhoto={{ uri:item.urlGallery }}
            />
        ))}
        </ScrollView>
