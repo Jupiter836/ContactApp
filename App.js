@@ -8,13 +8,12 @@ import { Screen3 } from './src/screens/Screen3'
 
 
 const screenTitles = ['Contacts', 'Log In', 'Gallery']
-const urlUser = 'https://jsonplaceholder.typicode.com/users'
-const urlGallery ='https://jsonplaceholder.typicode.com/photos?_limit=30'
+/* const urlUser = 'https://jsonplaceholder.typicode.com/users'
+const urlGallery ='https://jsonplaceholder.typicode.com/photos?_limit=30' */
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
-
-  const [isLoading, setLoading] = useState (true)
+  /* const [isLoading, setLoading] = useState (true)
   const [dataUser, setDataUser] = useState ([])
   const [dataGallery, setDataGallery] = useState ([])
   const [refresh, setRefresh] = useState(false)
@@ -88,7 +87,7 @@ const asyncHandler = async () => {
 
   if (isLoading) {
     return <ActivityIndicator style={styles.indicatorStyle} size="large" color="black" />
-  } 
+  }  */
 
   return (
     <View style={[styles.root, { backgroundColor: activeScreen === 3 ? 'black' : 'white' }]}>

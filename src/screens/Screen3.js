@@ -1,11 +1,52 @@
-import React from 'react'
-import { ScrollView, StyleSheet } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { ScrollView, StyleSheet, Alert, ActivityIndicator } from 'react-native'
 import { GalleryCard } from '../components/GalleryCard'
 //import { DATA } from '../DATA'
 
-export const Screen3 = ({ dataGallery }) => {
+const urlGallery ='https://jsonplaceholder.typicode.com/photos?_limit=30'
 
-   console.log(dataGallery) 
+export const Screen3 = () => {
+
+  const [isLoading, setLoading] = useState (true)
+  const [dataGallery, setDataGallery] = useState ([])
+  const [refresh, setRefresh] = useState(false)
+
+  console.log(':::', dataGallery)
+
+  useEffect (() =>{
+    asyncHandlerGallery ()
+ }, [refresh])
+
+const asyncHandlerGallery = async () => {
+ try {
+   const response = await fetch(urlGallery)
+   const gallery = await response.json()
+   setDataGallery(gallery)
+   setLoading(false)
+ } catch (error) {
+   setLoading(false)
+   alertHandlerGallery(error)
+ }
+}
+
+ const alertHandlerGallery = (error) =>
+   Alert.alert(
+     `${error}`,
+     'Repeat the request?',
+     [
+       {
+         text: 'Cancel',
+         onPress: () => console.log('Cancel'),
+         style: 'cancel'
+       },
+       { text: 'OK', onPress: () => setRefresh(!refresh) }
+     ],
+     { cancelable: false }
+   )
+
+   if (isLoading) {
+    return <ActivityIndicator style={styles.indicatorStyle} size="large" color="black" />
+  } 
 
    return (
      <>
