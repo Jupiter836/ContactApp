@@ -9,7 +9,7 @@ import { Screen3 } from './src/screens/Screen3'
 
 const screenTitles = ['Contacts', 'Log In', 'Gallery']
 const url = 'https://jsonplaceholder.typicode.com/users'
-/* const urlGallery ='https://jsonplaceholder.typicode.com/photos?_limit=30' */
+const urlGallery ='https://jsonplaceholder.typicode.com/photos?_limit=30'
 
 const App = () => {
   const [activeScreen, setActiveScreen] = useState(1)
@@ -52,7 +52,7 @@ const asyncHandler = async () => {
     )
 
 
-   /*  useEffect (() =>{
+    useEffect (() =>{
       asyncHandlerGallery ()
    }, [refresh])
  
@@ -82,7 +82,7 @@ const asyncHandler = async () => {
          { text: 'OK', onPress: () => setRefresh(!refresh) }
        ],
        { cancelable: false }
-     ) */
+     )
 
   if (isLoading) {
     return <ActivityIndicator style={styles.indicatorStyle} size="large" color="black" />

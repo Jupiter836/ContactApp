@@ -14,7 +14,7 @@ const GalleryBlock = ({ title }) => {
     </>
 )
 }
-export const CardGallery = ({
+export const GalleryCard = ({
     galleryName,
     galleryNumber,
     galleryPhoto

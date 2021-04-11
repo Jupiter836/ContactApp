@@ -5,16 +5,17 @@ import { GalleryCard } from '../components/GalleryCard'
 export const Screen3 = ({ data }) => {
   // console.log(data)
    return (
-     <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
-       {data.map((item) => (
-         <GalleryCard
-           galleryName={item.username}
-           galleryNumber={item.phone}
-           galleyPhot={item.userPic}
-           userAddress={item.address.zipcode}
-         />
+     <>
+       <ScrollView style={styles.scrollStyle} contentContainerStyle={styles.scrollContainer}>
+         {data.map((item) => (
+           <GalleryCard
+             galleryName={item.title}
+             galleryNumber={item.albumId}
+             galleyPhoto={{ uri:item.url }}
+           />
        ))}
-     </ScrollView>
+       </ScrollView>
+     </>
    )
 }
 
