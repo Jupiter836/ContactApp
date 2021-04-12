@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { ScrollView, StyleSheet, Alert, ActivityIndicator } from 'react-native'
+import { ScrollView, StyleSheet, Alert, ActivityIndicator  } from 'react-native'
 import { GalleryCard } from '../components/GalleryCard'
 //import { DATA } from '../DATA'
 
